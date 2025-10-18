@@ -4,77 +4,33 @@
         xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
         ui:WindowHelper.UseModernWindowStyle="True"
         ui:WindowHelper.SystemBackdropType="Mica"
-        ui:TitleBar.Height="36"
-        Title="VSenv Desktop"
-        Height="580"
-        Width="840"
-        MinWidth="720"
-        MinHeight="500">
+        Title="VSenv Desktop" Height="580" Width="840"
+        MinWidth="720" MinHeight="500"
+        Loaded="Window_Loaded">
+    <ui:NavigationView x:Name="NavView" IsPaneOpen="False"
+                       SelectionChanged="NavView_SelectionChanged">
+        <ui:NavigationView.MenuItems>
+            <ui:NavigationViewItem x:Name="NavHome" Content="首页">
+                <ui:NavigationViewItem.Icon>
+                    <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Home}"/>
+                </ui:NavigationViewItem.Icon>
+            </ui:NavigationViewItem>
 
-    <DockPanel>
-        <!-- 菜单栏 -->
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_文件">
-                <MenuItem Header="退出" Click="ExitMenuItem_Click" InputGestureText="Alt+F4"/>
-            </MenuItem>
-            <MenuItem Header="_帮助">
-                <MenuItem Header="关于 VSenv Desktop" Click="AboutMenuItem_Click"/>
-            </MenuItem>
-        </Menu>
+            <ui:NavigationViewItem x:Name="NavInstances" Content="实例管理">
+                <ui:NavigationViewItem.Icon>
+                    <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Code}"/>
+                </ui:NavigationViewItem.Icon>
+            </ui:NavigationViewItem>
 
-        <Grid Margin="16">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+            <ui:NavigationViewItem x:Name="NavAbout" Content="关于">
+                <ui:NavigationViewItem.Icon>
+                    <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Info}"/>
+                </ui:NavigationViewItem.Icon>
+            </ui:NavigationViewItem>
+            
+            
+        </ui:NavigationView.MenuItems>
 
-            <!-- 实例选择 -->
-            <GroupBox Header="实例" Grid.Row="0">
-                <StackPanel Orientation="Horizontal">
-                    <ComboBox x:Name="CmbInstances" MinWidth="200" MaxWidth="300" Margin="0,0,12,0"/>
-                    <Button x:Name="BtnRefresh" Content="刷新" Click="BtnRefresh_Click" Padding="12,4"/>
-                </StackPanel>
-            </GroupBox>
-
-            <!-- 主操作按钮 -->
-            <UniformGrid Columns="4" Grid.Row="1" Margin="0,12,0,0">
-                <Button x:Name="BtnCreate" Content="创建实例" Click="BtnCreate_Click" Padding="8,6" Margin="4,0,0,0" Width="197"/>
-                <Button x:Name="BtnStart" Content="启动实例" Click="BtnStart_Click" Padding="8,6" Margin="4,0,0,0" Width="198"/>
-                <Button x:Name="BtnRemove" Content="删除实例" Click="BtnRemove_Click" Padding="8,6" Margin="4,0,0,0" Width="197"/>
-                <Button x:Name="BtnListExt" Content="已装扩展" Click="BtnListExt_Click" Padding="8,6" Margin="4"/>
-            </UniformGrid>
-
-            <!-- 启动选项 -->
-            <GroupBox Header="启动选项" Grid.Row="2" Margin="0,16,0,0">
-                <WrapPanel>
-                    <CheckBox x:Name="ChkSandbox" Content="沙箱模式" Margin="0,0,20,8"/>
-                    <CheckBox x:Name="ChkFakeHW" Content="伪造硬件指纹" Margin="0,0,20,8"/>
-                    <CheckBox x:Name="ChkHost" Content="随机主机名" Margin="0,0,20,8"/>
-                    <CheckBox x:Name="ChkMac" Content="随机 MAC 地址" Margin="0,0,20,8"/>
-                </WrapPanel>
-            </GroupBox>
-
-            <!-- 输出区域 -->
-            <GroupBox Header="输出日志" Grid.Row="3" Margin="0,16,0,0">
-                <TextBox x:Name="TxtOutput"
-                         IsReadOnly="True"
-                         FontFamily="Consolas"
-                         FontSize="12"
-                         TextWrapping="NoWrap"
-                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                         ScrollViewer.VerticalScrollBarVisibility="Auto"
-                         Padding="8"/>
-            </GroupBox>
-
-            <!-- 状态栏 -->
-            <StatusBar Grid.Row="4" Margin="0,12,0,0">
-                <StatusBarItem>
-                    <TextBlock x:Name="TxtStatus" Text="就绪"/>
-                </StatusBarItem>
-            </StatusBar>
-        </Grid>
-    </DockPanel>
+        <ui:Frame x:Name="RootFrame"/>
+    </ui:NavigationView>
 </Window>

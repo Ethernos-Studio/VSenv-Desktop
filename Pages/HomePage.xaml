@@ -1,0 +1,11 @@
+﻿<ui:Page x:Class="VSenvDesktop.Pages.HomePage"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+         Title="首页">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Style="{StaticResource HeaderTextBlockStyle}"
+                   Text="欢迎使用 VSenv Desktop"/>
+    </Grid>
+</ui:Page>
