@@ -1,0 +1,65 @@
+﻿ 平凡的魅力 on  ~
+# vsenv
+[PLUGIN] 加载成功: pm v1.0.1 (dhjs0000)
+=======================================
+  本软件完全免费开源，买到就是被骗啦！
+  回声洞:
+  本软件不含任何停止（因为validCommands忘记加 stop
+  仓库：      https://github.com/dhjs0000/vsenv
+  回声洞投稿：https://github.com/dhjs0000/vsenv/issues
+=======================================
+
+ VSenv 1.6.2(2025-10-13) by dhjs0000 (AGPLv3.0)
+
+ VSenv (C) 2025 by dhjs0000，为爱发电中～
+
+ヾ(≧▽≦*)o CSP-J/S 2025 即将开考（还有 13 天）！
+   祝你 RP++，代码 0 错误 0 警告，freopen 永不忘记！
+
+用法：
+ [推荐]vsenv f                                  交互模式启动实例
+ 基础功能 =======================================================================================
+  vsenv --version                               显示版本信息
+  vsenv create <实例名> [路径]                  创建指定实例
+  vsenv start  <实例名> [--host] [--mac] [--proxy <url>] [--sandbox] [--fake-hw]开启指定实例
+  vsenv stop   <实例名>                         结束指定实例（过时）
+  vsenv remove <实例名>                         删除指定实例
+  vsenv list                                    列出全部实例
+ 注册协议 =======================================================================================
+  vsenv regist <实例名>                         将 vscode:// 协议重定向到此实例
+  vsenv regist-guard <实例名>                   守护 vscode:// 协议不被篡改（需管理员权限）
+  vsenv logoff                                  恢复默认的 vscode:// 协议处理程序
+  vsenv rest <路径>                             手动重建 vscode:// 协议（支持拖拽带双引号的路径）
+ 安装VSCode插件 =================================================================================
+  vsenv extension <实例名> <扩展ID>             安装单个扩展
+  vsenv extension <实例名> import <列表文件>    批量安装
+  vsenv extension <实例名> list                 列出已装扩展
+ 导入导出 =======================================================================================
+  vsenv export <实例名> <导出路径>              导出实例
+  vsenv import <配置文件> [新实例名]            导入实例
+ VSenv插件 ======================================================================================
+  vsenv plugin install -i <路径>                安装本地插件
+  vsenv plugin remove <插件名>                  卸载插件
+  vsenv plugin list                             列出已安装插件
+  vsenv pm                                      插件包管理器
+ 调试功能 ========================================================================================
+  vsenv -debug <路径>                           调试模式
+  vsenv doctor <路径>                           自检
+
+全局选项：
+  --lang <en|cn>      设置VSenv语言，默认为 "en"。
+  -quiet              安静模式（不输出彩蛋信息）
+
+vsenv start 选项：
+  --host              在当前 Windows 会话内随机化主机名（需管理员权限）。
+                      可用于隐藏真实计算机名。
+  --mac               生成随机 MAC 地址，并创建名为 VSenv-<实例名> 的临时虚拟网卡（需管理员权限）。
+  --proxy <url>       强制所有 WinHTTP 流量通过指定的 HTTP(S) 代理。
+                      示例：--proxy http://127.0.0.1:8080
+  --sandbox           在受限的 Logon-Session 沙箱内启动 VS Code。
+  --fake-hw           随机化硬件指纹（CPUID、磁盘序列号、MAC）以增强隐私和隔离。
+
+更多帮助：https://dhjs0000.github.io/VSenv/helps.html
+已安装插件：
+  pm
+

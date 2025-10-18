@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>VSenvDesktop</AssemblyName>
+    <RootNamespace>VSenvDesktop</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 如需要 InputBox 可引 Microsoft.VisualBasic -->
+    <Reference Include="Microsoft.VisualBasic" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentWPF" Version="0.10.2" />
+    <PackageReference Include="iNKORE.UI.WPF.Modern" Version="0.10.1" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.6" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.10" />
+  </ItemGroup>
+
+</Project>
