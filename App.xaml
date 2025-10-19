@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!-- 只留资源，不指定主题 -->
                 <ui:ThemeResources/>
                 <ui:XamlControlsResources/>
             </ResourceDictionary.MergedDictionaries>

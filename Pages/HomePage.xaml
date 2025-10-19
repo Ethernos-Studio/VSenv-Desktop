@@ -1,11 +1,81 @@
-﻿<ui:Page x:Class="VSenvDesktop.Pages.HomePage"
+﻿<ui:Page
          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+         xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="VSenvDesktop.Pages.HomePage"
          Title="首页">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="393*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top"
                    Style="{StaticResource HeaderTextBlockStyle}"
-                   Text="欢迎使用 VSenv Desktop"/>
+                   Text="欢迎使用 VSenv Desktop" Margin="20,20,0,0" Grid.ColumnSpan="3"/>
+
+        <!-- 实例选择 -->
+        <Label Content="选择实例：" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+               Margin="0,0,135,91" Grid.Column="2"/>
+        <ComboBox x:Name="CmbInstances"
+          DisplayMemberPath="Text"
+          HorizontalAlignment="Right" VerticalAlignment="Bottom"
+          Width="120" Margin="0,0,10,84"
+          SelectionChanged="CmbInstances_SelectionChanged" Grid.Column="2"/>
+
+        <!-- 设置图标按钮 -->
+        <Button x:Name="BtnSettings"
+        Width="40" Height="70"
+        HorizontalAlignment="Right" VerticalAlignment="Bottom"
+        Margin="0,0,210,11"
+        BorderThickness="0"
+        Click="BtnSettings_Click" Grid.Column="2">
+            <ui:SymbolIcon Symbol="Setting" FontSize="18"/>
+        </Button>
+
+        <!-- 启动按钮（原按钮 Margin 改一下，让出 50 px 给图标） -->
+        <Button x:Name="BtnLaunch"
+        Content="启动 %s" Height="70"
+        HorizontalAlignment="Right" VerticalAlignment="Bottom"
+        Width="195" Margin="0,0,10,10"
+        Click="Button_Click" Grid.Column="2"/>
+
+        <!-- Win11 圆角 Popup -->
+        <Popup x:Name="OptionsPopup"
+       PlacementTarget="{Binding ElementName=BtnSettings}"
+       Placement="Top"
+       StaysOpen="False"
+       HorizontalOffset="-150" VerticalOffset="-10"
+       Grid.ColumnSpan="3">
+            <!-- Win11 圆角卡片 -->
+            <Border CornerRadius="8"
+            Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"
+            BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+            BorderThickness="1"
+            Padding="12">
+                <!-- 可选：加一点点阴影更像 Win11 -->
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="2" BlurRadius="8" Opacity="0.25"/>
+                </Border.Effect>
+                <StackPanel>
+                    <CheckBox x:Name="ChkSandbox"    Content="沙箱模式"      Margin="0,2"/>
+                    <CheckBox x:Name="ChkRandomHost" Content="随机主机名"    Margin="0,2"/>
+                    <CheckBox x:Name="ChkRandomMac"  Content="随机 MAC 地址" Margin="0,2"/>
+                    <CheckBox x:Name="ChkFakeHw"     Content="伪造硬件指纹"  Margin="0,2"/>
+                    <TextBox  x:Name="TxtProxy"
+                      ui:ControlHelper.PlaceholderText="代理地址（可选）"
+                      Margin="0,4,0,0" Width="180"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,100" Grid.Column="2">
+            <TextBlock x:Name="TxtInvalidTip"
+               Text="该实例无效，无法启动"
+               Foreground="{DynamicResource SystemFillColorCautionBrush}"
+               FontSize="12"
+               Visibility="Collapsed"/>
+        </StackPanel>
     </Grid>
 </ui:Page>

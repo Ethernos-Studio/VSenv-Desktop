@@ -1,0 +1,56 @@
+﻿<ui:Page x:Class="VSenvDesktop.Pages.SettingsPage"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+         Title="设置"
+         Loaded="Page_Loaded">
+    <ScrollViewer>
+        <!-- 用 Margin 代替 Spacing -->
+        <StackPanel Margin="20,20,20,40">
+            <!-- 主题 -->
+            <ui:SettingsCard Header="应用主题"
+                             Description="跟随系统或手动指定"
+                             Margin="0,0,0,16">
+                <ToggleButton x:Name="TswTheme"
+                              Content="深色"
+                              IsChecked="False"
+                              Checked="TswTheme_Checked"
+                              Unchecked="TswTheme_Unchecked"/>
+            </ui:SettingsCard>
+
+            <!-- 开机启动 -->
+            <ui:SettingsCard Header="开机自动启动"
+                             Description="登录 Windows 后自动运行"
+                             Margin="0,0,0,16">
+                <ToggleButton x:Name="TswAutoStart"
+                              Content="启用"
+                              IsChecked="False"
+                              Checked="TswAutoStart_Checked"
+                              Unchecked="TswAutoStart_Unchecked"/>
+            </ui:SettingsCard>
+
+            <!-- 默认代理 -->
+            <ui:SettingsCard Header="默认代理"
+                             Description="新建实例时自动带入"
+                             Margin="0,0,0,16">
+                <TextBox x:Name="TxtDefaultProxy"
+                         ui:ControlHelper.PlaceholderText="http://127.0.0.1:7890"
+                         Width="200"
+                         LostFocus="TxtDefaultProxy_LostFocus"/>
+            </ui:SettingsCard>
+    
+
+            <!-- 关于 -->
+            <ui:SettingsCard Header="关于 VSenv Desktop"
+                             Description="查看版本与开源地址"
+                             Margin="0,0,0,16">
+                <TextBlock>
+                    <Hyperlink NavigateUri="https://github.com/Ethernos-Studio/vsenv"
+                               RequestNavigate="Hyperlink_RequestNavigate">
+                        GitHub 仓库
+                    </Hyperlink>
+                </TextBlock>
+            </ui:SettingsCard>
+        </StackPanel>
+    </ScrollViewer>
+</ui:Page>

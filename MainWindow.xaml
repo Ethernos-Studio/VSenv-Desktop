@@ -22,6 +22,24 @@
                 </ui:NavigationViewItem.Icon>
             </ui:NavigationViewItem>
 
+            <ui:NavigationViewItem x:Name="Download" Content="下载">
+                <ui:NavigationViewItem.Icon>
+                    <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Download}"/>
+                </ui:NavigationViewItem.Icon>
+            </ui:NavigationViewItem>
+
+            <ui:NavigationViewItem x:Name="VSenv" Content="VSenv信息">
+                <ui:NavigationViewItem.Icon>
+                    <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Library}"/>
+                </ui:NavigationViewItem.Icon>
+            </ui:NavigationViewItem>
+
+            <ui:NavigationViewItem x:Name="NavSettings" Content="设置">
+                <ui:NavigationViewItem.Icon>
+                    <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Settings}"/>
+                </ui:NavigationViewItem.Icon>
+            </ui:NavigationViewItem>
+            
             <ui:NavigationViewItem x:Name="NavAbout" Content="关于">
                 <ui:NavigationViewItem.Icon>
                     <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Info}"/>

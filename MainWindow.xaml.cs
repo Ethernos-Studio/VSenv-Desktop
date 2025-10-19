@@ -18,6 +18,9 @@ public partial class MainWindow : Window
         {
             if (item == NavHome) RootFrame.Navigate(new Pages.HomePage());
             if (item == NavInstances) RootFrame.Navigate(new Pages.InstancesPage());
+            if (item == Download) RootFrame.Navigate(new Pages.DownloadPage());
+            if (item == VSenv) RootFrame.Navigate(new Pages.VSenvInfo());
+            if (item == NavSettings) RootFrame.Navigate(new Pages.SettingsPage());
             if (item == NavAbout) RootFrame.Navigate(new Pages.AboutPage());
         }
     }

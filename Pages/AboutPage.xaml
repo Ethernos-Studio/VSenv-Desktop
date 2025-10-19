@@ -11,7 +11,7 @@
             <Run>一个用于管理 VS Code 多实例的桌面工具。</Run><LineBreak/>
             <Run>基于 vsenv.exe 构建。</Run><LineBreak/>
             <Run>版本：1.0.0</Run><LineBreak/>
-            <Run>构建日期：2025-06-25</Run>
+            <Run>构建日期：2025-10-19</Run>
         </TextBlock>
     </Grid>
 </ui:Page>

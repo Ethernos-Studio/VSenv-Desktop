@@ -36,7 +36,7 @@
                 <TextBox x:Name="TxtOutput" IsReadOnly="True" FontFamily="Consolas"
                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
                          ScrollViewer.VerticalScrollBarVisibility="Auto"
-                         MinHeight="180" TextChanged="TxtOutput_TextChanged"/>
+                         MinHeight="180"/>
             </GroupBox>
         </StackPanel>
     </ScrollViewer>
